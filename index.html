@@ -58,7 +58,7 @@
         </p>
       </div>
     </section>
-    <nav class="index" aria-label="精选项目索引"><a href="#apple"><span>01</span>果园苹果检测与计数</a><a href="#distillation"><span>02</span>元强化学习更新规则蒸馏</a><a href="#herobot"><span>03</span>HeroBot 机器人学习</a></nav>
+    <nav class="index" aria-label="精选项目索引"><a href="#apple"><span>01</span>果园苹果检测与计数</a><a href="#distillation"><span>02</span>元强化学习更新规则蒸馏</a><a href="#herobot"><span>03</span>智能感知与强化学习迷宫导航</a></nav>
     <section id="projects" aria-labelledby="projects-title">
       <div class="sectionhead">
         <h2 id="projects-title">精选项目</h2>
@@ -107,12 +107,13 @@
               <div class="barrow"><span>RNN · seq100</span><div class="bartrack" aria-hidden="true"><div class="barfill rnn" style="width:10.353%"></div></div><span class="barvalue">51.76</span></div>
               <div class="barrow"><span>MLP · seq20</span><div class="bartrack" aria-hidden="true"><div class="barfill mlp" style="width:26.201%"></div></div><span class="barvalue">131.00</span></div>
               <div class="barrow"><span>MLP · seq100</span><div class="bartrack" aria-hidden="true"><div class="barfill mlp" style="width:89.827%"></div></div><span class="barvalue">449.13</span></div>
-            </div><p class="legend">横向尺度 0–500；n = 16；学生 h = 32，统一 900 次训练更新。数值取 2026.09.04 提交论文 Table IV / VI，RNN 为修正后的结果。图示均值不包含误差范围。</p></div><div><h4 class="label">个人贡献</h4><ul class="plainlist"><li>基于开源研究框架扩展蒸馏与评估流程，比较两类学生网络及 20 / 100 步蒸馏长度。</li><li>在 CartPole、MinAtar Breakout、Brax Ant 中组织统一条件与匹配种子的评估。</li><li>定位并修复 RNN 训练中的随机数状态传递问题，完成重训和复评。</li><li>整理结果分布、配对比较与计算开销，分析拟合精度和下游效用的差异。</li></ul></div></div>
+            </div><p class="legend">16个匹配随机种子；平均回报越高越好；横向尺度0–500。</p></div><div><h4 class="label">个人贡献</h4><ul class="plainlist"><li>基于开源研究框架扩展蒸馏与评估流程，比较两类学生网络及 20 / 100 步蒸馏长度。</li><li>在 CartPole、MinAtar Breakout、Brax Ant 中组织统一条件与匹配种子的评估。</li><li>定位并修复 RNN 训练中的随机数状态传递问题，完成重训和复评。</li><li>整理结果分布、配对比较与计算开销，分析拟合精度和下游效用的差异。</li></ul></div></div>
           </div>
           <p class="keyfinding">
-            在本项目设置下，MLP seq100 是表现最好的学生配置，在 CartPole 和 Ant 上的平均回报分别为
-            449.13 和 3888.03，均高于 OPEN 教师；但在 Breakout 中所有学生仍明显低于教师，
-            说明蒸馏效果依赖测试环境。
+            在本项目设置下，MLP seq100 是表现最好的学生配置，
+            在 CartPole 和 Ant 上的平均回报分别为 449.13 和 3888.03，
+            均高于 OPEN 教师；其中，CartPole 上与教师的差异未达到统计显著。
+            在 Breakout 中所有学生仍明显低于教师，说明蒸馏效果依赖测试环境。
           </p>
           <a class="codelink" href="https://github.com/FrankZhang25786/learn-rl-algorithms/tree/experiment/recurrent-teacher-mlp-student" target="_blank" rel="noopener noreferrer">查看论文实验分支 ↗</a>
           <details class="details"><summary>跨环境结果与统计分析</summary><div class="detailscontent"><h4 class="label">三类环境中的平均回报 · n = 16</h4><div class="tablewrap"><table><thead><tr><th scope="col">条件</th><th scope="col">CartPole</th><th scope="col">Breakout</th><th scope="col">Ant</th></tr></thead><tbody><tr><th scope="row">OPEN 教师</th><td>388.785</td><td>56.787</td><td>2579.193</td></tr><tr><th scope="row">RNN-L20</th><td>80.512</td><td>0.095</td><td>-383.936</td></tr><tr><th scope="row">RNN-L100</th><td>51.763</td><td>0.423</td><td>525.012</td></tr><tr><th scope="row">MLP-L20</th><td>131.005</td><td>6.996</td><td>644.589</td></tr><tr><th scope="row">MLP-L100</th><td class="metric">449.134</td><td>7.719</td><td class="metric">3888.027</td></tr></tbody></table></div><p class="small resultnote">回报尺度因环境而异，应在同一列内比较。</p><div class="twocol" style="margin-top:22px"><div><h4 class="label">CartPole 配对比较</h4><p>MLP 与 RNN 在 seq100 下的 Wilcoxon p ≈ 0.000031；MLP seq100 与教师比较的 p ≈ 0.1556，尚无统计显著差异。MLP seq100 有 11/16 次达到 500 分上限，需要考虑天花板效应。</p></div><div><h4 class="label">项目范围</h4><p>教师来自原研究提供的预训练检查点，贡献集中于学生结构对比、实验实现与评估。CartPole、Breakout 与 Ant 均为仿真或基准环境；结论限定于所测试的教师、架构及实验设置。</p></div></div><p class="small resultnote">原研究与基础代码署名见实验仓库。</p></div></details>
@@ -120,8 +121,8 @@
       </article>
       <div class="rule"></div>
       <article class="project" id="herobot">
-        <div class="projecthead"><div class="number" aria-hidden="true">03</div><div><h3>HeroBot 机器人感知与智能导航</h3><p class="meta">Artificial Intelligence for Robotics · 综合实践项目</p><div class="tags"><span class="tag">TensorFlow / Keras</span><span class="tag">scikit-learn</span><span class="tag">Q-learning / SARSA</span></div></div></div>
-        <div class="projectbody"><p class="lead">围绕虚拟迷宫机器人，完成图像分类、传感器数据聚类与强化学习导航三个子任务，连接监督学习、无监督学习和序列决策的实践。</p>
+        <div class="projecthead"><div class="number" aria-hidden="true">03</div><div><h3>智能感知与强化学习迷宫导航</h3><p class="meta">Artificial Intelligence for Robotics · 综合实践项目</p><div class="tags"><span class="tag">TensorFlow / Keras</span><span class="tag">scikit-learn</span><span class="tag">Q-learning / SARSA</span></div></div></div>
+        <div class="projectbody"><p class="lead">围绕虚拟迷宫机器人HeroBot，完成图像分类、传感器数据聚类与强化学习导航三个子任务，连接监督学习、无监督学习和序列决策的实践。</p>
           <div class="resultbox">
   <h4 class="label">关键结果</h4>
     <div class="tablewrap">
@@ -158,10 +159,7 @@
   </div>
           <div class="twocol"><div><h4 class="label">识别与聚类</h4>
           <p>
-            基于 8,023 张五类实体图像比较 KNN 与 CNN，CNN 在 1,604 张测试图像上达到
-            99.50% 准确率；对 10,000 条传感器记录进行 K-means 与 DBSCAN 聚类。
-            K-means 形成 5 个簇并更贴近已知类别结构；DBSCAN 虽获得更高轮廓系数，
-            但产生 7 个簇和 59 个噪声点。
+            结合已知类别结构判断聚类质量，避免仅凭轮廓系数选模型
           </p>
         </div><div><h4 class="label">导航与泛化</h4>
           <p>
