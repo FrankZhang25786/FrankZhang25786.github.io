@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="张帆 Fan Zhang 的技术作品集：果园苹果检测与计数、强化学习优化器蒸馏、HeroBot 机器人学习项目。">
+  <meta name="description"content="张帆 Fan Zhang 的技术项目集，涵盖果园目标检测、元强化学习更新规则蒸馏与机器人智能系统。">
   <meta name="theme-color" content="#163fc5">
-  <title>张帆 Fan Zhang · 视觉与机器人学习作品集</title>
+  <title>张帆 Fan Zhang｜计算机视觉、强化学习与机器人项目集</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23163fc5'/%3E%3Ctext x='10' y='44' fill='white' font-family='Arial,sans-serif' font-size='34' font-weight='700'%3EFZ%3C/text%3E%3C/svg%3E">
   <style>
     :root{--ink:#142139;--muted:#536178;--blue:#163fc5;--line:#dce3ed;--soft:#f3f6fb;--white:#fff;--max:1120px}
@@ -26,7 +26,14 @@
     .codelink{display:inline-block;font-size:14px;font-weight:600}.miniresults{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:6px;margin-bottom:24px}.miniresults div{padding:20px}.miniresults div+div{border-left:1px solid var(--line)}.miniresults strong{display:block;font-size:29px;font-weight:600;color:var(--blue);line-height:1.4;font-variant-numeric:tabular-nums}.miniresults span{font-size:13px;color:var(--muted)}
     .about{border-top:1px solid var(--line);padding:40px 0 54px;scroll-margin-top:100px}.aboutgrid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px}.about h3{font-size:17px;margin-bottom:15px}.edu{padding-bottom:18px}.edu strong{font-size:15px;display:block}.edu p{font-size:14px;color:var(--muted)}.skillrow{margin-bottom:13px;font-size:14px}.skillrow strong{display:block;font-size:13px;color:var(--blue);margin-bottom:3px}footer{background:var(--ink);color:#d1daea;padding:26px 0;font-size:13px}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer a{color:white}footer span{color:#aab8cf}
     @media(max-width:860px){.hero{gap:36px}.applegrid,.researchgrid{grid-template-columns:1fr}.applegrid{gap:25px}.comparison{max-width:540px}.pictures img{max-height:380px;object-fit:contain}.projectbody{margin-left:0}.aboutgrid{gap:30px}.hero{padding-top:45px}.projecthead{grid-template-columns:42px 1fr;gap:15px}.index a{padding:16px 12px;gap:10px}.research{padding:22px}}
-    @media(max-width:600px){.wrap{width:calc(100% - 36px)}.nav{min-height:66px;gap:14px}.navlinks{gap:16px}.navlinks a{font-size:13px}.brand{font-size:15px}.brand span{margin-right:7px}.hero{grid-template-columns:1fr;gap:28px;padding:36px 0}.hero h1{font-size:46px}.intro h2{font-size:22px}.intro p{font-size:15px}.index{grid-template-columns:1fr;margin-bottom:42px}.index a+a{border-left:0;border-top:1px solid var(--line)}.sectionhead{display:block}.sectionhead p{margin-top:4px}.sectionhead h2{font-size:23px}.project h3{font-size:22px}.projecthead{gap:12px;grid-template-columns:35px 1fr}.number{font-size:23px}.project{margin-bottom:44px}.twocol,.aboutgrid{grid-template-columns:1fr;gap:24px}.miniresults div{padding:13px 9px}.miniresults strong{font-size:24px}.miniresults span{font-size:12px}.research{padding:18px}.protocol{gap:14px 22px}.barrow{grid-template-columns:98px 1fr 55px;gap:7px;font-size:12px}.pictures img{max-height:320px}.contact{gap:10px 22px}.lead{font-size:15px}.about{padding-top:28px}.rule{margin:38px 0}th,td{padding:9px 10px}.meta{font-size:13px}.detailscontent .small{font-size:13px}}
+    @media(max-width:600px){
+      .wrap{width:calc(100% - 36px)}.nav{min-height:66px;gap:14px}.navlinks{gap:16px}.navlinks a{font-size:13px}.brand{font-size:15px}.brand span{margin-right:7px}.hero{grid-template-columns:1fr;gap:28px;padding:36px 0}
+      .hero h1{font-size:46px}.intro h2{font-size:22px}.intro p{font-size:15px}.index{grid-template-columns:1fr;margin-bottom:42px}.index a+a{border-left:0;border-top:1px solid var(--line)}.sectionhead{display:block}
+      .sectionhead p{margin-top:4px}.sectionhead h2{font-size:23px}.project h3{font-size:22px}.projecthead{gap:12px;grid-template-columns:35px 1fr}.number{font-size:23px}.project{margin-bottom:44px}.twocol,.aboutgrid{grid-template-columns:1fr;gap:24px}
+      .miniresults div{padding:13px 9px}.miniresults strong{font-size:24px}.miniresults span{font-size:12px}.research{padding:18px}.protocol{gap:14px 22px}.barrow{grid-template-columns:98px 1fr 55px;gap:7px;font-size:12px}.pictures img{max-height:320px}
+      .contact{gap:10px 22px}.lead{font-size:15px}.about{padding-top:28px}.rule{margin:38px 0}th,td{padding:9px 10px}.meta{font-size:13px}.detailscontent .small{font-size:13px}
+      .pictures {grid-template-columns: 1fr;}.pictures img {max-height: none;}
+    }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
     @media print{header{position:static}.wrap{width:100%}.hero{padding:20px 0}.index,.details{display:none}.project{break-inside:avoid;margin-bottom:30px}footer{background:white;color:var(--ink)}.about{padding:20px 0}a{color:inherit}.comparison,.research{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
   </style>
@@ -44,14 +51,14 @@
       </div>
 
       <div class="intro">
-        <h2>计算机视觉与机器人学习</h2>
+        <h2>计算机视觉、强化学习与机器人</h2>
         <p>
           项目涵盖果园目标检测、Meta-RL 更新规则蒸馏与机器人智能实践，
           重点呈现数据处理、模型训练、系统集成和实验评估。
         </p>
       </div>
     </section>
-    <nav class="index" aria-label="精选项目索引"><a href="#apple"><span>01</span>果园苹果检测与计数</a><a href="#distillation"><span>02</span>强化学习优化器蒸馏</a><a href="#herobot"><span>03</span>HeroBot 机器人学习</a></nav>
+    <nav class="index" aria-label="精选项目索引"><a href="#apple"><span>01</span>果园苹果检测与计数</a><a href="#distillation"><span>02</span>元强化学习更新规则蒸馏</a><a href="#herobot"><span>03</span>HeroBot 机器人学习</a></nav>
     <section id="projects" aria-labelledby="projects-title">
       <div class="sectionhead">
         <h2 id="projects-title">精选项目</h2>
